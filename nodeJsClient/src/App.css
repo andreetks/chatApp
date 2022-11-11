@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.chat{
+  overflow-y: scroll;
+  width: 40vw;
+  height: 70vh;
+}
+
+
+
+.message{
+  text-align: start;
+}
+
+.messageOther{
+  text-align: end;
+}

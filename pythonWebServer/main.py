@@ -1,6 +1,6 @@
 import socketio
 
-sio = socketio.AsyncServer(async_mode='asgi')
+sio = socketio.AsyncServer(async_mode='asgi', cors_allowed_origins='http://localhost:5173')
 app = socketio.ASGIApp(sio)
 
 @sio.event
@@ -10,8 +10,8 @@ def connect(sid, environ, auth):
 @sio.event
 async def message(sid, data):
     print('hello')
-    await sio.emit("nullish", {"data": "sada"})
     print(data)
+    await sio.emit("message", { "sid": sid,"data": data})
 
 
 @sio.event
